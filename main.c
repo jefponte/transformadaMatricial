@@ -202,7 +202,9 @@ int main(void)
 	    			resultadoTeste[i][j] = temp;
 	    		}
 		}
-	    printf("\bResultado\n\n");
+		printf("\n-----------------------------------------------------\n");
+		printf("---------------Doença identificada.---------------------\n");
+		printf("--------------------------------------------------------\n");
 	   	for (linha = 0; linha < 6; linha++) {
 	   		for (coluna = 0; coluna < 1; coluna++) {
 	   			printf(" %.6f \t", a[linha][coluna]);
