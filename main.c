@@ -19,7 +19,7 @@ int main(void)
 	int pivo = 0, p = 0, m = 0, k = 0;
 	double identidade[34][34];
 	double a[6][34];
-	double teste[34][1] = {{2}, {2}, {0}, {3}, {0}, {0}, {0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {0}, {0}, {0}, {1}, {0}, {55}};
+	double teste[34][1] = {{3}, {3}, {3}, {2}, {1}, {0}, {0}, {0}, {1}, {1}, {1}, {0}, {0}, {1}, {0}, {1}, {2}, {0}, {2}, {2}, {2}, {2}, {2}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {1}, {0}, {8}};
 	double resultadoTeste[6][1];
 	linha = 34;
 	coluna = 34;
@@ -193,8 +193,23 @@ int main(void)
 	   	//Multiplica-se a matriz A por uma matriz com uma coluna de X para obter o Y(que informará a doença do paciente);
 
 	   	//Multiplicar o teste por A e colocar o valor em resultadoTeste
+	    for(i = 0; i < 6; i++){
+	    		for(j = 0; j < 1; j++){
+	    			temp = 0;
+	    			for(k = 0; k < 34; k++){
+	    				temp = temp+a[i][k]*teste[k][j];
+	    			}
+	    			resultadoTeste[i][j] = temp;
+	    		}
+		}
+	    printf("\bResultado\n\n");
+	   	for (linha = 0; linha < 6; linha++) {
+	   		for (coluna = 0; coluna < 1; coluna++) {
+	   			printf(" %.6f \t", a[linha][coluna]);
 
-
+	   		}
+	   		printf("\n");
+	   	}
 
 //	printf("%d", y[0][1]);
 
