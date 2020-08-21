@@ -19,6 +19,8 @@ int main(void)
 	int pivo = 0, p = 0, m = 0, k = 0;
 	double identidade[34][34];
 	double a[6][34];
+	double teste[34][1] = {{2}, {2}, {0}, {3}, {0}, {0}, {0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {0}, {0}, {0}, {1}, {0}, {55}};
+	double resultadoTeste[6][1];
 	linha = 34;
 	coluna = 34;
 
@@ -190,7 +192,8 @@ int main(void)
 	//A=Ymodel*Xmodel'*inv(Xmodel*Xmodel');
 	   	//Multiplica-se a matriz A por uma matriz com uma coluna de X para obter o Y(que informará a doença do paciente);
 
-	   	//O teste.
+	   	//Multiplicar o teste por A e colocar o valor em resultadoTeste
+
 
 
 //	printf("%d", y[0][1]);
