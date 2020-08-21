@@ -14,21 +14,43 @@ int main(void)
 	int tx[358][34];
 	int xTx[34][34];
 	int yTx[6][34];
-	double xTxInv[34][34];
 	int linha, coluna, tab;
 	int pivo = 0, p = 0, m = 0, k = 0;
-	double identidade[34][34];
-	double a[6][34];
+	float identidade[34][34];
+	float a[6][34];
 	linha = 34;
 	coluna = 34;
 
-	//tx - Calcula transposta de X.
+//	printf("\n----------------------------------------\n");
+//	printf("---------------Matriz X---------------------\n");
+//	printf("----------------------------------------\n");
+//	for(i = 0; i < linhasX; i++){
+//		for(j = 0; j < colunasX; j++){
+//			printf("%d", x[i][j]);
+//			printf("\t");
+//		}
+//		printf("\n");
+//	}
+
+//	printf("\n----------------------------------------\n");
+//	printf("---------------Matriz Y---------------------\n");
+//	printf("----------------------------------------\n");
+//	for(i = 0; i < linhasY; i++){
+//		for(j = 0; j < colunasY; j++){
+//			printf("%d", y[i][j]);
+//			printf("\t");
+//		}
+//		printf("\n");
+//	}
+	//tx recebe transposta de x
    for (i = 0; i < linhasX; i = i + 1){
 		for (j = 0; j < colunasX; j = j + 1){
 			tx[j][i] = x[i][j];
 		}
    }
-   //Mostra Transposta de X. OK
+//	printf("\n----------------------------------------\n");
+//	printf("---------------Matriz TX (Transposta de X)---------------------\n");
+//	printf("----------------------------------------\n");
 //	for(i = 0; i < colunasX; i++){
 //		for(j = 0; j < linhasX; j++){
 //			printf("%d", tx[i][j]);
@@ -38,7 +60,6 @@ int main(void)
 //	}
 
    //xtX - Recebe a multiplicação de x por tx
-//
    for(i = 0; i < linhasX; i++){
    		for(j = 0; j < 34; j++){
    			temp = 0;
@@ -49,6 +70,9 @@ int main(void)
    		}
    	}
    //Mostra xTx. OK
+//   	printf("\n----------------------------------------\n");
+//   	printf("---------------Matriz XTX (X multiplcada por TX)---------------------\n");
+//   	printf("----------------------------------------\n");
 //	for(i = 0; i < linhasX; i++){
 //		for(j = 0; j < linhasX; j++){
 //			printf("%d", xTx[i][j]);
@@ -70,6 +94,9 @@ int main(void)
    	}
 
    //mostra yTx
+//	printf("\n----------------------------------------\n");
+//	printf("---------------Matriz YTX (Y multiplcada por TX)---------------------\n");
+//	printf("----------------------------------------\n");
 //   	for(i = 0; i < 6; i++){
 //   		for(j = 0; j < 34; j++){
 //   			printf("%d", yTx[i][j]);
@@ -93,13 +120,9 @@ int main(void)
 //Mostra Identidade de Xtx
 //	for (linha = 0; linha < 34; linha++) {
 //		for (coluna = 0; coluna < 34; coluna++) {
-//			printf(" %.1f", identidade[linha][coluna]);
-//			if (coluna < 34 - 1) {
-//				printf("\t");
-//			} else {
-//				printf("\n");
-//			}
+//			printf(" %.1f\t", identidade[linha][coluna]);
 //		}
+//		printf("\n");
 //	}
 	//Gerar Inversa de xTx
 
@@ -125,7 +148,7 @@ int main(void)
 	//Mostrar Inversa de Xtx
 	for (linha = 0; linha < 34; linha++) {
 		for (coluna = 0; coluna < 34; coluna++) {
-			printf(" %.6f \t", identidade[linha][coluna]);
+			printf(" %.10f \t", identidade[linha][coluna]);
 
 		}
 
