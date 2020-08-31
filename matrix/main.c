@@ -32,17 +32,25 @@ void mostraMatriz(double *matriz, int linhas, int colunas);
 
 int main(void)
 {
-	double a[2][3] = {1,-3, 6, 4, 5, 0};
-	double b[3][2] = {2,4,-1,5,3,6};
-	double resultado[2][2];
+	double a[3][2] = {
+			{2, 3},
+			{0, 1},
+			{-1, 4}
+	};
+	double b[2][3] = {
+			{1, 2, 3},
+			{-2, 0, 4}
+	};
+	double resultado[3][3];
 	int linhasR, colunasR;
-
+//
+//	printf("\n-------Resultado---------------\n");
+//	mostraMatriz(a, 3, 2);
+//	printf("\n-------Resultado---------------\n");
+//	mostraMatriz(b, 2, 3);
+//	printf("\n-------Resultado---------------\n");
+	multiplica(a, 3, 2, b, 2, 3, resultado, &linhasR, &colunasR);
 	printf("\n-------Resultado---------------\n");
-	mostraMatriz(a, 2, 3);
-	printf("\n-------Resultado---------------\n");
-	mostraMatriz(a, 3, 2);
-	printf("\n-------Resultado---------------\n");
-	multiplica(a, 2, 3, b, 3, 2, resultado, &linhasR, &colunasR);
 	mostraMatriz(resultado, linhasR, colunasR);
 
 	return 0;
@@ -75,7 +83,7 @@ int multiplica(
 		double *b, int linhasB, int colunasB,
 		double *resultado, int *linhasR, int *colunasR)
 {
-	int i, j, k;
+	int i, j, k;//Variáveis para controle de laços.
 	if(colunasA != linhasB){
 		printf("Erro na multiplicação: Matrizes incompatíveis para esta operação.\t\n");
 		return 0;
@@ -84,14 +92,12 @@ int multiplica(
 	*linhasR = linhasA;
 	for(i = 0; i < linhasA; i++){
 		for(j = 0; j < colunasB; j++){
-			resultado[i*2+j] = 0.0;
+			resultado[i*colunasB+j] = 0.0;
 			for(k = 0; k < colunasA; k++){
-				resultado[i*colunasB+j] += a[i*colunasA+k]*b[k*colunasB+j];
+				resultado[i*(colunasB)+j] += a[i*colunasA+k]*b[k*colunasB+j];
 			}
 		}
 	}
-
-
 	return 1;
 }
 /**
