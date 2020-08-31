@@ -1,0 +1,9 @@
+.metadata
+*.project
+/inversa/Debug/*.exe
+/inversa/Debug/*.o
+/multiplica/*.cproject
+Debug
+*.exe
+*.cproject
+.settings

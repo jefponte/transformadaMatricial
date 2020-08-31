@@ -15,8 +15,8 @@ int main(void)
 	double tx[358][34];
 	double xTx[34][34];
 	double yTx[6][34];
-	int linha, coluna, tab;
-	int pivo = 0, p = 0, m = 0, k = 0;
+	int linha, coluna;
+	int pivo = 0, m = 0, k = 0;
 	double identidade[34][34];
 	double a[6][34];
 	double teste[34][1] = {{3}, {3}, {3}, {2}, {1}, {0}, {0}, {0}, {1}, {1}, {1}, {0}, {0}, {1}, {0}, {1}, {2}, {0}, {2}, {2}, {2}, {2}, {2}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {1}, {0}, {8}};
@@ -62,7 +62,7 @@ int main(void)
 		printf("\n");
 	}
 
-   //xtX - Recebe a multiplicação de x por tx
+   //xtX - Recebe a multiplicaÃ§Ã£o de x por tx
    for(i = 0; i < linhasX; i++){
    		for(j = 0; j < 34; j++){
    			temp = 0;
@@ -177,20 +177,20 @@ int main(void)
 	   			a[i][j] = temp;
 	   		}
 	   	}
-		printf("\n----------------------------------------\n");
-		printf("---------------Matriz A. Multiplique com uma matriz que tenha uma coluna  ---------------------\n");
-		printf("----------------------------------------\n");
-	   //Mostra o A
-	   	for (linha = 0; linha < 6; linha++) {
-	   		for (coluna = 0; coluna < 34; coluna++) {
-	   			printf(" %.6f \t", a[linha][coluna]);
-
-	   		}
-	   		printf("\n");
-	   	}
+//		printf("\n----------------------------------------\n");
+//		printf("---------------Matriz A. Multiplique com uma matriz que tenha uma coluna  ---------------------\n");
+//		printf("----------------------------------------\n");
+//	   //Mostra o A
+//	   	for (linha = 0; linha < 6; linha++) {
+//	   		for (coluna = 0; coluna < 34; coluna++) {
+//	   			printf(" %.6f \t", a[linha][coluna]);
+//
+//	   		}
+//	   		printf("\n");
+//	   	}
 
 	//A=Ymodel*Xmodel'*inv(Xmodel*Xmodel');
-	   	//Multiplica-se a matriz A por uma matriz com uma coluna de X para obter o Y(que informará a doença do paciente);
+	   	//Multiplica-se a matriz A por uma matriz com uma coluna de X para obter o Y(que informarÃ¡ a doenÃ§a do paciente);
 
 	   	//Multiplicar o teste por A e colocar o valor em resultadoTeste
 	    for(i = 0; i < 6; i++){
@@ -203,11 +203,11 @@ int main(void)
 	    		}
 		}
 		printf("\n-----------------------------------------------------\n");
-		printf("---------------Doença identificada.---------------------\n");
+		printf("---------------DoenÃ§a identificada.---------------------\n");
 		printf("--------------------------------------------------------\n");
 	   	for (linha = 0; linha < 6; linha++) {
 	   		for (coluna = 0; coluna < 1; coluna++) {
-	   			printf(" %.6f \t", (-1)*a[linha][coluna]);
+	   			printf(" %.6f \t", resultadoTeste[linha][coluna]);
 
 	   		}
 	   		printf("\n");
