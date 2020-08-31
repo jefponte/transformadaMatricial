@@ -37,15 +37,22 @@ double y[6][358] = {{0,1,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
 double tx[358][34];
 double xTx[34][34];
 double xTxInv[34][34];
+double yTx[6][34];
+double a[6][34];
+double teste[34][1] = {{3}, {3}, {3}, {2}, {1}, {0}, {0}, {0}, {1}, {1}, {1}, {0}, {0}, {1}, {0}, {1}, {2}, {0}, {2}, {2}, {2}, {2}, {2}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {1}, {0}, {8}};
+double diagnostico[6][1];
 
 int main(void)
 {
 	int linhasXtx, colunasXtx;
+	int l, c;
 	transposta(x, 34, 358, tx);
 	multiplica(x, 34, 358, tx, 358, 34, xTx, &linhasXtx, &colunasXtx);
 	inversa(xTx, 34, xTxInv);
-	mostraMatriz(xTxInv, 34, 34);
-
+	multiplica(y, 6, 358, tx, 358, 34, yTx, &l, &c);
+	multiplica(yTx, 6, 34, xTxInv, 34, 34, a, &l, &c);
+	multiplica(a, 6, 34, teste, 34, 1, diagnostico, &l, &c);
+	mostraMatriz(diagnostico, l, c);
 	return 0;
 }
 
@@ -127,7 +134,7 @@ void mostraMatriz(double *matriz, int linhas, int colunas){
 	int i, j;
 	for(i = 0; i < linhas; i++){
 		for(j = 0; j < colunas; j++){
-			printf("%.10f\t", matriz[i*colunas+j]);
+			printf("%.4f\t", matriz[i*colunas+j]);
 		}
 		printf("\n");
 	}
