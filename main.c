@@ -39,7 +39,7 @@ double xTx[34][34];
 double xTxInv[34][34];
 double yTx[6][34];
 double a[6][34];
-double teste[34][1] = {{3}, {3}, {3}, {2}, {1}, {0}, {0}, {0}, {1}, {1}, {1}, {0}, {0}, {1}, {0}, {1}, {2}, {0}, {2}, {2}, {2}, {2}, {2}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {1}, {0}, {8}};
+double teste[34][1]  = {{2}, {1}, {0}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {1}, {3}, {0}, {0}, {0}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {2}, {0}, {18}};
 double diagnostico[6][1];
 
 int main(void)
@@ -150,8 +150,8 @@ void exibirDiagnostico(double *matriz) {
 	double maior = 0.0;
 	for (i = 0; i < linhas; i++) {
 		for (j = 0; j < colunas; j++) {
-			if (matriz[i * colunas + j] - 1 > maior) {
-				matriz[i * colunas + j] = maior;
+			if (matriz[i * colunas + j] > maior) {
+				maior = matriz[i * colunas + j];
 				index = i;
 			}
 		}
