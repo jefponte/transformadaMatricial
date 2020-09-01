@@ -52,7 +52,10 @@ int main(void)
 	multiplica(y, 6, 358, tx, 358, 34, yTx, &l, &c);
 	multiplica(yTx, 6, 34, xTxInv, 34, 34, a, &l, &c);
 	multiplica(a, 6, 34, teste, 34, 1, diagnostico, &l, &c);
+	exibirDiagnostico(diagnostico);
+	printf("\n----------------\n");
 	mostraMatriz(diagnostico, l, c);
+
 	return 0;
 }
 
@@ -137,5 +140,40 @@ void mostraMatriz(double *matriz, int linhas, int colunas){
 			printf("%.4f\t", matriz[i*colunas+j]);
 		}
 		printf("\n");
+	}
+}
+
+void exibirDiagnostico(double *matriz) {
+	int linhas = 6;
+	int colunas = 1;
+	int i, j, index = 0;
+	double maior = 0.0;
+	for (i = 0; i < linhas; i++) {
+		for (j = 0; j < colunas; j++) {
+			if (matriz[i * colunas + j] - 1 > maior) {
+				matriz[i * colunas + j] = maior;
+				index = i;
+			}
+		}
+	}
+	switch (index) {
+	case 0:
+		printf("Psoríase");
+		break;
+	case 1:
+		printf("Dermatite seborréica");
+		break;
+	case 2:
+		printf("Líquen Plano");
+		break;
+	case 3:
+		printf("Pititríase rósea");
+		break;
+	case 4:
+		printf("Dermatite crônica");
+		break;
+	case 5:
+		printf("Pitiríase rubra pilar");
+		break;
 	}
 }
