@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Transformadas Matriciais -
+ Name        : Transformadas Matriciais (Arduino)-
  Reconhecimento de Padrões no Auxílio ao
  Diagnóstico Médico dermatológico
  Author      : Jefferson Uchôa Ponte/Gilmaicor Leandro Oliveira
