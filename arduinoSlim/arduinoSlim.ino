@@ -3,13 +3,17 @@
  Name        : Transformadas Matriciais -
  Reconhecimento de Padrões no Auxílio ao
  Diagnóstico Médico dermatológico
- Author      : Jefferson Uchôa Ponte
+ Author      : Jefferson Uchôa Ponte/Gilmaicor Leandro Oliveira
  Version     :1.0
- Copyright   : Copyright 1996-1998 by JEFFERSON UCHOA PONTE
+ Copyright   : Copyright 2020 by JEFFERSON UCHOA PONTE
  IFCE - All rights reserved.
  Description : Utilização de transformadas matriciais
  no auxílio ao diagnóstico médico.
 
+
+  Trabalho para a disciplina Sistemas
+  Embarcados no IFCE em 2020.
+  Plataforma alvo: Arduino Uno
 
   O algoritmo original foi obtido em Matlab
   nas aulas do mestrado Teleinformática,
@@ -18,7 +22,6 @@
   Alencar Barreto em 22/02/2019
  ============================================================================
  */
-
 
 #include <SoftwareSerial.h>
 
