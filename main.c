@@ -6,7 +6,7 @@
  * Faz a transposta da matriz M e põe o resultado em transposta.
  * O número de linhas é trocado pelo número de colunas e o número de colunas é trocado pelo número de linhas.
  */
-void transposta(int *matriz, int linhas, int colunas, int *transposta);
+void transposta(float *matriz, int linhas, int colunas, float *transposta);
 
 /**
  * Realiza a operação de multiplicação de matrizes: AXB e põe o resultado na matriz resultado.
@@ -50,12 +50,12 @@ int main(void)
 	int linhasXtx, colunasXtx;
 	int l, c;
 	transposta((float*)x, 34, 100, (float*)tx);
-	multiplica((float*)x, 34, 100, tx, 100, 34, (float*)xTx, &linhasXtx, &colunasXtx);
+	multiplica((float*)x, 34, 100,(float*) tx, 100, 34, (float*)xTx, &linhasXtx, &colunasXtx);
 	inversa((float*)xTx, 34, (float*)xTxInv);
 	multiplica((float*)y, 6, 100, (float*)tx, 100, 34, (float*)yTx, &l, &c);
 	multiplica((float*)yTx, 6, 34, (float*)xTxInv, 34, 34, (float*)a, &l, &c);
 	multiplica((float*)a, 6, 34, (float*)teste, 34, 1, (float*)diagnostico, &l, &c);
-	exibirDiagnostico(diagnostico);
+	exibirDiagnostico((float*)diagnostico);
 	printf("\n----------------\n");
 	mostraMatriz((float*)diagnostico, l, c);
 

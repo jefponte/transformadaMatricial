@@ -21,13 +21,13 @@ float a[6][34] = {{ 2.3553119e-02, 3.3456104e-02, 1.2522390e-02,-3.0463585e-04, 
 
 void main2(){
 
-  float teste[34][1] = {{2}, {2}, {2}, {1}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {0}, {0}, {0}, {2}, {0}, {42}};//Coluna 35
-  float resultado[6][1];
+  float xTeste[34][1] = {{2}, {2}, {2}, {1}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {0}, {0}, {0}, {2}, {0}, {42}};//Coluna 35
+  float yResultado[6][1];
   Serial.println("Vamos verificar!");
-  multiplica(a, teste, resultado);
-  exibirDiagnostico(resultado);
+  multiplica(a, xTeste, yResultado);
+  exibirDiagnostico(yResultado);
   delay(1000); 
-  mostraMatriz(resultado);
+  mostraMatriz(yResultado);
 
 }
 
