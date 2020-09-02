@@ -22,10 +22,8 @@ void main2(){
 
   float teste[34][1] = {{2}, {1}, {1}, {0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {2}, {0}, {0}, {0}, {2}, {0}, {12}};//Coluna 10
   float resultado[6][1];
-  
   Serial.println("Vamos verificar!");
   multiplica(a, teste, resultado);
-  //mostraMatriz(resultado);
   exibirDiagnostico(resultado);
 
 }
