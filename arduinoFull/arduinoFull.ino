@@ -76,7 +76,9 @@ void transposta(float *matriz, int linhas, int colunas, float *transposta)
 		}
    }
 }
-
+/**
+ * Multiplica a matriz a pela matriz b. 
+ */
 int multiplica(
 		float *a, int linhasA, int colunasA,
 		float *b, int linhasB, int colunasB,
@@ -100,7 +102,9 @@ int multiplica(
 	return 1;
 }
 
-
+/**
+ * Cria matriz identidade de uma matriz quadrada.
+ */
 void identidade(float *matriz, float *resultado, int ordem){
 	int i, j;
 	for (i = 0; i < ordem; i++) {
@@ -114,6 +118,9 @@ void identidade(float *matriz, float *resultado, int ordem){
 		}
 	}
 }
+/**
+ * Exibe uma matriz nXm
+ */
 void mostraMatriz(float *matriz, int linhas, int colunas){
 	int i, j;
 	for(i = 0; i < linhas; i++){
@@ -125,7 +132,9 @@ void mostraMatriz(float *matriz, int linhas, int colunas){
 		Serial.print("\n");
 	}
 }
-
+/**
+ * Exibe o diagnóstico gerado. 
+ */
 void exibirDiagnostico(float *matriz) {
 	int linhas = 6;
 	int colunas = 1;
