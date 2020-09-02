@@ -1,4 +1,4 @@
-# transformadaMatricial
+# Transformada Matricial
 <ul>
 <li>
     adruinoFull.ino é a biblioteca completa com todas as operações.
