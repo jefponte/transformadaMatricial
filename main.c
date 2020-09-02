@@ -4,14 +4,18 @@
 
 /**
  * Faz a transposta da matriz M e põe o resultado em transposta.
- * O número de linhas é trocado pelo número de colunas e o número de colunas é trocado pelo número de linhas.
+ * O número de linhas é trocado pelo número de colunas e o
+ * número de colunas é trocado pelo número de linhas.
  */
 void transposta(float *matriz, int linhas, int colunas, float *transposta);
 
 /**
- * Realiza a operação de multiplicação de matrizes: AXB e põe o resultado na matriz resultado.
- * Retorno 0 indica erro, as matrizes devem ser compatíveis para esta operação(O número de colunas da matriz A deve ser igual ao número de linhas da Matriz B).
- * Os ponteiros para inteiros das linhas e colunas da matriz resultado atualizarão o resultado do número de linhas e colunas da nova matriz.
+ * Realiza a operação de multiplicação de matrizes: AXB e põe o resultado na matriz
+ * resultado.
+ * Retorno 0 indica erro, as matrizes devem ser compatíveis para esta operação
+ * (O número de colunas da matriz A deve ser igual ao número de linhas da Matriz B).
+ * Os ponteiros para inteiros das linhas e colunas da matriz resultado atualizarão
+ * o resultado do número de linhas e colunas da nova matriz.
  * (A matriz resultado terá o número de linhas de A e o Número de Colunas de B).
  */
 int multiplica(
@@ -28,7 +32,8 @@ void inversa(float *matriz, int ordem, float *resultado);
  */
 void mostraMatriz(float *matriz, int linhas, int colunas);
 /**
- * Calcula a identidade da matriz quadrada e põe o resultado apontando para o endereço de resultado.
+ * Calcula a identidade da matriz quadrada e põe o resultado apontando
+ * para o endereço de resultado.
  */
 void identidade(float *matriz, float *resultado, int ordem);
 /**
@@ -57,7 +62,7 @@ int main(void)
 	float a[6][34];
 	//Elemento teste.
 	float xTeste[34][1] = {{3}, {2}, {2}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {3}, {2}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {1}, {0}, {2}, {0}, {0}, {0}, {2}, {0}, {35}};//Coluna 10
-	float yDiagnostico[6][1];
+	float yResultado[6][1];
 	int linhasXtx, colunasXtx;
 	int l, c;
 	transposta((float*)x, 34, 100, (float*)tx);
@@ -65,10 +70,10 @@ int main(void)
 	inversa((float*)xTx, 34, (float*)xTxInv);
 	multiplica((float*)y, 6, 100, (float*)tx, 100, 34, (float*)yTx, &l, &c);
 	multiplica((float*)yTx, 6, 34, (float*)xTxInv, 34, 34, (float*)a, &l, &c);
-	multiplica((float*)a, 6, 34, (float*)xTeste, 34, 1, (float*)yDiagnostico, &l, &c);
-	exibirDiagnostico((float*)yDiagnostico);
+	multiplica((float*)a, 6, 34, (float*)xTeste, 34, 1, (float*)yResultado, &l, &c);
+	exibirDiagnostico((float*)yResultado);
 	printf("\n----------------\n");
-	mostraMatriz((float*)yDiagnostico, l, c);
+	mostraMatriz((float*)yResultado, l, c);
 
 	return 0;
 }

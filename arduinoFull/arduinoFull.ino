@@ -9,13 +9,15 @@ void setup()
 	while (!Serial) {
 	  ; // wait for serial port to connect. Needed for Native USB only
 	}
-  Serial.println("Sistema em funcionamento. Preparar treinamento da matriz...");
+  Serial.println("Inicio da aplicacao...");
 }
 
 void loop() // run over and over
 {
 	main2();
-	delay(22000);   
+  Serial.println("\nFim da aplicacao...");
+	delay(50000);   
+  Serial.println("\nReiniciar aplicacao...\n");
 }
 
   	
@@ -23,8 +25,13 @@ int main2(void)
 {
   float b[3][3] = {1, 2, 3, 0, 1, 4, 0, 0, 1};
   float resultado[3][3];
+  
+  //Y = AX
+  //A
+  //A * Xteste  --> Yresultante
+  Serial.println("\n------------------------\n");
   mostraMatriz((float*)b, 3, 3);
-  Serial.println("\n----------------\n");
+  Serial.println("\n------Inversa de B----------\n");
   inversa((float*)b, 3, (float*)resultado);
   mostraMatriz((float*)resultado, 3, 3);
 
@@ -123,6 +130,7 @@ void mostraMatriz(float *matriz, int linhas, int colunas){
 		for(j = 0; j < colunas; j++){
         Serial.print(matriz[i*colunas+j]);
         Serial.print("\t");
+        delay(500); 
 		}
 		Serial.print("\n");
 	}
