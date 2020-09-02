@@ -25,10 +25,6 @@ int main2(void)
 {
   float b[3][3] = {1, 2, 3, 0, 1, 4, 0, 0, 1};
   float resultado[3][3];
-  
-  //Y = AX
-  //A
-  //A * Xteste  --> Yresultante
   Serial.println("\n------------------------\n");
   mostraMatriz((float*)b, 3, 3);
   Serial.println("\n------Inversa de B----------\n");
@@ -37,19 +33,10 @@ int main2(void)
 
 	return 0;
 }
-
-void treinar(float* x, float* y, float *a){
-  float tx[100][34];
-  float xTx[34][34];
-  float xTxInv[34][34];
-  float yTx[6][34];
-  int linhasXtx, colunasXtx, l, c;
-  transposta((float*)x, 34, 100, (float*)tx);
-  multiplica((float*)x, 34, 100, (float*)tx, 100, 34, (float*)xTx, &linhasXtx, &colunasXtx);
-  inversa((float*)xTx, 34, (float*)xTxInv);
-  multiplica((float*)y, 6, 100, (float*)tx, 100, 34, (float*)yTx, &l, &c);
-  multiplica((float*)yTx, 6, 34, (float*)xTxInv, 34, 34, (float*)a, &l, &c);
-}
+/**
+ * Calcula a inversa da matriz quadrada e põe o resultado em resultado.
+ * 
+ */
 void inversa(float *matriz, int ordem, float *resultado){
 	int linha, coluna, k;
 	float pivo, m;
@@ -77,6 +64,9 @@ void inversa(float *matriz, int ordem, float *resultado){
 
 
 }
+/**
+ * Calcula a transposta da matriz de n linhas e m colunas. 
+ */
 void transposta(float *matriz, int linhas, int colunas, float *transposta)
 {
 	int i, j;
