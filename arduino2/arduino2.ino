@@ -20,8 +20,9 @@ void main2(){
   
   float resultado[6][1] = {{1}, {0}, {0}, {0}, {0}, {0}};//Coluna 1
   Serial.println("Iniciando aplicacao...");
+  Serial.println("Matriz Restultado:");
   mostraMatriz((float*)resultado, 6, 1);
-    
+  exibirDiagnostico((float*)resultado);
 }
 
 
@@ -55,5 +56,44 @@ void mostraMatriz(float *matriz, int linhas, int colunas){
         Serial.print("\t");
     }
     Serial.print("\n");
+  }
+}
+/**
+ * Passe um ponteiro apontando para uma matriz 6X1
+ * 
+ */
+void exibirDiagnostico(float *matriz) {
+  int linhas = 6;
+  int colunas = 1;
+  int i, j, index = 0;
+  float maior = 0.0;
+  for (i = 0; i < linhas; i++) {
+    for (j = 0; j < colunas; j++) {
+      if (matriz[i * colunas + j] > maior) {
+        maior = matriz[i * colunas + j];
+        index = i;
+      }
+    }
+  }
+  Serial.println("\n----Diagnostico---\n");
+  switch (index) {
+  case 0:
+    Serial.println("Psoriase");
+    break;
+  case 1:
+    Serial.println("Dermatite seborreica");
+    break;
+  case 2:
+    Serial.println("Liquen Plano");
+    break;
+  case 3:
+    Serial.println("Pititriase rosea");
+    break;
+  case 4:
+    Serial.println("Dermatite cronica");
+    break;
+  case 5:
+    Serial.println("Pitiriase rubra pilar");
+    break;
   }
 }
