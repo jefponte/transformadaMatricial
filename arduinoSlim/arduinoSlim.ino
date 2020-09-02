@@ -1,3 +1,25 @@
+/*
+ ============================================================================
+ Name        : Transformadas Matriciais -
+ Reconhecimento de Padrões no Auxílio ao
+ Diagnóstico Médico dermatológico
+ Author      : Jefferson Uchôa Ponte
+ Version     :1.0
+ Copyright   : Copyright 1996-1998 by JEFFERSON UCHOA PONTE
+ IFCE - All rights reserved.
+ Description : Utilização de transformadas matriciais
+ no auxílio ao diagnóstico médico.
+
+
+  O algoritmo original foi obtido em Matlab
+  nas aulas do mestrado Teleinformática,
+  na disciplina em Inteligência Computacional
+  Aplicada com o professor Guilherme de
+  Alencar Barreto em 22/02/2019
+ ============================================================================
+ */
+
+
 #include <SoftwareSerial.h>
 
 
@@ -31,6 +53,15 @@ void main2(){
 
 }
 
+/**
+ * Realiza a operação de multiplicação de matrizes: AXB e põe o resultado na matriz
+ * resultado.
+ * Retorno 0 indica erro, as matrizes devem ser compatíveis para esta operação
+ * (O número de colunas da matriz A deve ser igual ao número de linhas da Matriz B).
+ * Os ponteiros para inteiros das linhas e colunas da matriz resultado atualizarão
+ * o resultado do número de linhas e colunas da nova matriz.
+ * (A matriz resultado terá o número de linhas de A e o Número de Colunas de B).
+ */
 int multiplica(
     float a[6][34],
     float b[34][1],
@@ -47,6 +78,10 @@ int multiplica(
   }
   return 1;
 }
+/**
+ * Calcula a identidade da matriz quadrada e põe o resultado apontando
+ * para o endereço de resultado.
+ */
 void mostraMatriz(float matriz[6][1]){
   int i, j;
   for(i = 0; i < 6; i++){
@@ -57,6 +92,9 @@ void mostraMatriz(float matriz[6][1]){
     Serial.print("\n");
   }
 }
+/**
+ * Recebe uma matriz e mostra o diagnostico.
+ */
 void exibirDiagnostico(float matriz[6][1]) {
   int linhas = 6;
   int colunas = 1;

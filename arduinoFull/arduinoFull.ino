@@ -1,3 +1,24 @@
+/*
+ ============================================================================
+ Name        : Transformadas Matriciais -
+ Reconhecimento de Padrões no Auxílio ao
+ Diagnóstico Médico dermatológico
+ Author      : Jefferson Uchôa Ponte
+ Version     :1.0
+ Copyright   : Copyright 1996-1998 by JEFFERSON UCHOA PONTE
+ IFCE - All rights reserved.
+ Description : Utilização de transformadas matriciais
+ no auxílio ao diagnóstico médico.
+
+
+  O algoritmo original foi obtido em Matlab
+  nas aulas do mestrado Teleinformática,
+  na disciplina em Inteligência Computacional
+  Aplicada com o professor Guilherme de
+  Alencar Barreto em 22/02/2019
+ ============================================================================
+ */
+
 #include <SoftwareSerial.h>
 
 
@@ -34,8 +55,7 @@ int main2(void)
 	return 0;
 }
 /**
- * Calcula a inversa da matriz quadrada e põe o resultado em resultado.
- * 
+ * Calcula inversa de uma matriz quadrada de ordem m.
  */
 void inversa(float *matriz, int ordem, float *resultado){
 	int linha, coluna, k;
