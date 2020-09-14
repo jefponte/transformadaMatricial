@@ -7,3 +7,4 @@ Debug
 *.exe
 *.cproject
 .settings
+/analise/ArmLinuxOTM/main.o
