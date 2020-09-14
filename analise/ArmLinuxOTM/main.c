@@ -79,7 +79,7 @@ int main(void)
 	t = clock() - t; //tempo final - tempo inicial
 	tempo = ((double)t)/((CLOCKS_PER_SEC/1000));
 	//imprime o tempo na tela
-//	printf("Tempo de execucao: %lf\n\n", tempo); //conversão para double
+	printf("Tempo de execucao: %lf\n\n", tempo); //conversão para double
 
 //	exibirDiagnostico((float*)yResultado);
 //	printf("\n----------------\n");
