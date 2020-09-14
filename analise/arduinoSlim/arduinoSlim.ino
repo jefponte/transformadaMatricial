@@ -48,12 +48,15 @@ void main2(){
 
   float xTeste[34][1] = {{1}, {1}, {0}, {2}, {0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {2}, {1}, {2}, {1}, {0}, {0}, {1}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {0}, {2}, {0}, {18}};//Coluna 13
   float yResultado[6][1];
-  Serial.println("Vamos verificar!");
-  multiplica(a, xTeste, yResultado);
-  exibirDiagnostico(yResultado);
-  delay(1000); 
-  mostraMatriz(yResultado);
-
+  unsigned long meutempo;
+  int i;
+  meutempo = millis();
+  for(i = 0; i < 10; i++){
+    multiplica(a, xTeste, yResultado);    
+  }  
+  meutempo = millis() - meutempo;
+  Serial.println(meutempo);
+  delay(100); 
 }
 
 /**
