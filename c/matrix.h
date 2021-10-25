@@ -1,14 +1,14 @@
 /*
  ============================================================================
  Name        : Transformadas Matriciais (Raspberry Pi)-
- Reconhecimento de Padrões no Auxílio ao
- Diagnóstico Médico dermatológico
- Author      : Jefferson Uchôa Ponte/Gilmaicor Leandro Oliveira
+ Reconhecimento de Padrï¿½es no Auxï¿½lio ao
+ Diagnï¿½stico Mï¿½dico dermatolï¿½gico
+ Author      : Jefferson Uchï¿½a Ponte/Gilmaicor Leandro Oliveira
  Version     :1.0
  Copyright   : Copyright 2020 by JEFFERSON UCHOA PONTE
  IFCE - All rights reserved.
- Description : Utilização de transformadas matriciais
- no auxílio ao diagnóstico médico.
+ Description : Utilizaï¿½ï¿½o de transformadas matriciais
+ no auxï¿½lio ao diagnï¿½stico mï¿½dico.
 
 
 	Trabalho para a disciplina Sistemas
@@ -16,8 +16,8 @@
 	Plataforma alvo: Raspberry PI Sistema Linux
 
 	O algoritmo original foi obtido em Matlab
-	nas aulas do mestrado Teleinformática,
-	na disciplina em Inteligência Computacional
+	nas aulas do mestrado Teleinformï¿½tica,
+	na disciplina em Inteligï¿½ncia Computacional
 	Aplicada com o professor Guilherme de
 	Alencar Barreto em 22/02/2019
 
@@ -29,21 +29,23 @@
 
 
 
+
+
 /**
- * Faz a transposta da matriz M e põe o resultado em transposta.
- * O número de linhas é trocado pelo número de colunas e o
- * número de colunas é trocado pelo número de linhas.
+ * Faz a transposta da matriz M e pï¿½e o resultado em transposta.
+ * O nï¿½mero de linhas ï¿½ trocado pelo nï¿½mero de colunas e o
+ * nï¿½mero de colunas ï¿½ trocado pelo nï¿½mero de linhas.
  */
 void transposta(float *matriz, int linhas, int colunas, float *transposta);
 
 /**
- * Realiza a operação de multiplicação de matrizes: AXB e põe o resultado na matriz
+ * Realiza a operaï¿½ï¿½o de multiplicaï¿½ï¿½o de matrizes: AXB e pï¿½e o resultado na matriz
  * resultado.
- * Retorno 0 indica erro, as matrizes devem ser compatíveis para esta operação
- * (O número de colunas da matriz A deve ser igual ao número de linhas da Matriz B).
- * Os ponteiros para inteiros das linhas e colunas da matriz resultado atualizarão
- * o resultado do número de linhas e colunas da nova matriz.
- * (A matriz resultado terá o número de linhas de A e o Número de Colunas de B).
+ * Retorno 0 indica erro, as matrizes devem ser compatï¿½veis para esta operaï¿½ï¿½o
+ * (O nï¿½mero de colunas da matriz A deve ser igual ao nï¿½mero de linhas da Matriz B).
+ * Os ponteiros para inteiros das linhas e colunas da matriz resultado atualizarï¿½o
+ * o resultado do nï¿½mero de linhas e colunas da nova matriz.
+ * (A matriz resultado terï¿½ o nï¿½mero de linhas de A e o Nï¿½mero de Colunas de B).
  */
 int multiplica(
 		float *a, int linhasA, int colunasA,
@@ -59,8 +61,8 @@ void inversa(float *matriz, int ordem, float *resultado);
  */
 void mostraMatriz(float *matriz, int linhas, int colunas);
 /**
- * Calcula a identidade da matriz quadrada e põe o resultado apontando
- * para o endereço de resultado.
+ * Calcula a identidade da matriz quadrada e pï¿½e o resultado apontando
+ * para o endereï¿½o de resultado.
  */
 void identidade(float *matriz, float *resultado, int ordem);
 /**
